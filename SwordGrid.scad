@@ -55,15 +55,15 @@ module buttonHole(butL, butW, butH,
 		// Вырезы для ножек кнопки. 
 		// Между ними сформируется стопор для тела кнопки.
 		for(legsHoleY = [0, legWidth + butRestW]) {
-			translate([0, legsHoleY, 0])
-				cube([butRestL, legWidth, butRestH]);
+			translate([-0.1, legsHoleY, 0])
+				cube([butRestL + 0.1, legWidth, butRestH + 0.1]);
 		}
 		// "Тело" кнопки
 		translate([butRestL, 0, 0])
-			cube([butL, butW, butH]);
+			cube([butL, butW, butH + 0.1]);
 		// "Окошко" для нажимной части кнопки
 		translate([butRestL + butL, (butW - butWinW)/2, butWinInt])
-			cube([butWinL, butWinW, butWinH]);
+			cube([butWinL + 0.1, butWinW, butWinH + 0.1]);
 	}
 }
 
@@ -132,7 +132,7 @@ HOLDER_WIDTH = BLADE_WIDTH;
 HOLDER_LENGTH = GRIP_LENGTH/2;
 
 BUTTON_LENGTH = 0.5;
-BUTTON_WIDTH = 0.8;
+BUTTON_WIDTH = 0.7;
 BUTTON_HEIGTH = 0.7;
 BUTTON_WINDOW_LENGTH = WALL_WIDTH;
 BUTTON_WINDOW_WIDTH = 0.3;
